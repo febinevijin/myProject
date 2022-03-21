@@ -1,0 +1,247 @@
+
+
+<body class="crm_body_bg">
+
+
+
+    <!-- main content part here -->
+
+    <!-- sidebar  -->
+
+    <!--/ sidebar  -->
+
+
+    <section class="main_content dashboard_part large_header_bg">
+        <!-- menu  -->
+
+        <!--/ menu  -->
+        <div class="main_content_iner overly_inner ">
+            <div class="container-fluid p-0 ">
+                <!-- page title  -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page_title_box d-flex align-items-center justify-content-between mt-5">
+                            <div class="page_title_left">
+                                <h3 class="f_s_30 f_w_700 dark_text">Add product</h3>
+
+                           
+                    </div>
+                </div>
+                <div class="row">
+
+                   
+<div class="container  ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Add product</h2>.
+           
+            <form action="/admin/add-product" id="formAddProd" method="post"  enctype="multipart/form-data">   
+
+           
+             <span  id="name_error_message"></span>
+                <label for="">Brand name</label>
+                <input type="text" name="brandName" class="form-control" id="form_name">
+                    
+                  <span  id="description_error_message"></span>   
+                 <label for="">Description</label>
+                <input type="text" name="description" class="form-control" id="form_description">
+
+                  <span  id="price_error_message"></span>  
+                 <label for="">Price</label>
+                <input type="text" name="price" class="form-control" id="form_price">
+
+                 <span  id="ram_error_message"></span>
+                 <label for="">RAM</label>
+                <input type="text" name="ram" class="form-control" id="">
+
+                 <span  id="storage_error_message"></span>
+                <label for="">Storage</label>
+                <input type="text" name="storage" class="form-control" id="">
+
+                 <span  id="battery_error_message"></span>
+                 <label for="">Battery</label>
+                <input type="text" name="battery" class="form-control" id="">
+
+                <label for="">Quantity</label>
+                <input type="text" name="quantity" class="form-control" id="">
+
+                 <span  id="name_error_message"></span>
+                <label for="">Category</label>
+                
+                <select class="form-select" name="category" aria-label="Default select example">
+                <option selected>Select the brand</option>
+                <option value="redmi">redmi</option>
+                <option value="iphone">iphone</option>
+                <option value="samsung">samsung</option>
+                <option value="infinix">infinix</option>
+                <option value="realme">realme</option>
+                </select>
+                
+              
+                 
+                  
+               
+                <br>
+
+                 
+                 {{!-- <label for="">Remarks</label>
+                <input type="text" name="remarks" class="form-control" id=""> --}}
+
+                 <span  id="image1_error_message"></span>
+                 <label for="">image</label>
+                <input type="file" name="image"  class="form-control" id="img1" required>
+                 <label for="">image1</label>
+                <input type="file" name="image1"  class="form-control" id="img1" required>
+                 <label for="">image2</label>
+                <input type="file" name="image2"  class="form-control" id="img1" required>
+                 <label for="">image3</label>
+                <input type="file" name="image3"  class="form-control" id="img1" required>
+                 <label for="">image4</label>
+                <input type="file" name="image4"  class="form-control" id="img1" required>
+                 <label for="">image5</label>
+                <input type="file" name="image5"  class="form-control" id="img1" required>
+
+                <button type="submit" class="btn btn-success mt-4">submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+  
+
+$("#name_error_message").hide()
+
+$("#description_error_message").hide()
+$("#price_error_message").hide()
+
+$("image1_error_message").hide()
+var error_name = false;
+
+var error_description = false;
+var error_price = false;
+
+var error_image1=false;
+
+$("#form_name").focusout(function () {
+ 
+  check_name();
+});
+
+$("#form_description").focusout(function () {
+  check_description();
+});
+$("#form_price").focusout(function () {
+  check_price();
+});
+
+$("#img1").focusout(function () {
+  check_image1();
+});
+
+function check_image1(){
+           var image1=$("#img1").val();
+           if(image1!==""){
+             $("#image1_error_message").hide();
+               $("#img1").css("border-bottom","2px solid #34F458");
+          
+           }else{
+                $("#image1_error_message").html("choose image");
+               $("#image1_error_message").show();
+               $("#img1").css("border-bottom","2px solid #F90A0A");
+               error_image1 = true;
+           }
+         }
+
+
+function check_name() {
+  var pattern = /^(.|\s)[a-zA-Z]+(.|\s)$/;
+  var name = $("#form_name").val();
+  alert(name)
+  if (pattern.test(name) && name !== '') {
+    $("#name_error_message").hide();
+    $("#form_name").css("border-bottom", "2px solid #34F458");
+  } else {
+    $("#name_error_message").html("Should contain only Characters");
+    $("#name_error_message").show();
+    $("#form_name").css("border-bottom", "2px solid #F90A0A");
+    error_name = true;
+  }
+}
+
+
+
+function check_description() {
+  var pattern = /^(.|\s)[a-zA-Z]+(.|\s)$/;
+  var description = $("#form_brand").val()
+  if (pattern.test(description) && description !== '') {
+    $("#description_error_message").hide();
+    $("#form_description").css("border-bottom", "2px solid #34F458");
+  } else {
+    $("#description_error_message").html("Should contain only Characters");
+    $("#description_error_message").show();
+    $("#form_description").css("border-bottom", "2px solid #F90A0A");
+    error_description = true;
+  }
+}
+
+function check_price() {
+  var pattern = /^[0-9]*$/;
+  var price = $("#form_price").val();
+  if (pattern.test(price) && price !== '') {
+    $("#price_error_message").hide();
+    $("#form_price").css("border-bottom", "2px solid #34F458");
+  } else {
+    $("#price_error_message").html("Invalid number");
+    $("#price_error_message").show();
+    $("#form_price").css("border-bottom", "2px solid #F90A0A");
+    error_price = true;
+  }
+}
+
+
+
+$("#formAddProd").submit(function () {
+  error_name = false;
+
+  error_description = false;
+  error_price = false;
+ 
+  error_image1=false;
+  
+
+  check_name();
+
+  check_description();
+  check_price();
+   check_image1();
+
+  if (error_name === false  && error_description === false && error_price=== false  === false&&error_image1==false) {
+    return true;
+  } else {
+    alert("Please Fill the form Correctly");
+    return false;
+  }
+
+
+});
+
+
+</script>
+
+                    <!--end col-->
+                </div>
+            </div>
+        </div>
+
+      
+    </section>
+    
+
+    
+</body>
+
+
+
+
+

@@ -1,0 +1,74 @@
+<div class="container mt-4 ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Add product</h2>.
+           
+            <form action="/admin/edit-section/{{product._id}}" method="post"  enctype="multipart/form-data">    
+                <label for="">Brand name</label>
+                <input type="text" name="brandName" class="form-control" id="" value="{{product.brandName}}">
+                    
+                 <label for="">Description</label>
+                <input type="text" name="description" class="form-control" id="" value="{{product.description}}">
+                   
+                 <label for="">Price</label>
+                <input type="text" name="price" class="form-control" id="" value="{{product.price}}">
+
+                 <label for="">RAM</label>
+                <input type="text" name="ram" class="form-control" id="" value="{{product.ram}}">
+
+                <label for="">Storage</label>
+                <input type="text" name="storage" class="form-control" id="" value="{{product.storage}}">
+
+                 <label for="">Battery</label>
+                <input type="text" name="battery" class="form-control" id="" value="{{product.battery}}">
+
+                <label for="">Category</label>
+                
+                <select class="form-select" name="category" aria-label="Default select example" value="{{product.category}}">
+                <option selected>Select the brand</option>
+                <option value="redmi">redmi</option>
+                <option value="iphone">iphone</option>
+                <option value="samsung">samsung</option>
+                <option value="infinix">infinix</option>
+                <option value="realme">realme</option>
+                </select>
+                
+              
+                 
+                  
+               
+                <br>
+
+                 
+                 {{!-- <label for="">Remarks</label>
+                <input type="text" name="remarks" class="form-control" id=""> --}}
+
+                 <label for="">image</label> 
+                 <img src="/images/{{product._id}}.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image"  class="form-control" onchange="viewImage(event)">
+
+                <img src="/images/{{product._id}}.image1.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image1"  class="form-control" onchange="viewImage(event)">
+
+                <img src="/images/{{product._id}}.image2.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image2"  class="form-control" onchange="viewImage(event)">
+                <img src="/images/{{product._id}}.image3.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image3"  class="form-control" onchange="viewImage(event)">
+
+                <img src="/images/{{product._id}}.image4.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image4"  class="form-control" onchange="viewImage(event)">
+
+                <img src="/images/{{product._id}}.image5.jpeg " alt="" style="width:100px; height:150px" id="imgView">
+                <input type="file" name="image5"  class="form-control" onchange="viewImage(event)">
+
+                <button type="submit" class="btn btn-success mt-4">submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])   
+    }
+</script> 

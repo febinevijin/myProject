@@ -1,0 +1,131 @@
+<section class="checkout-wrapper section">
+    <div class="container">
+        {{!-- FORM --}}
+        <form action="/add-address" method="post" id="">
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+                        <ul id="accordionExample">
+
+                                   
+                           
+
+                                {{!-- ADD ADDRESS --}}
+
+                                 <li>
+                                
+                                <section class="checkout-steps-form-content" 
+                                   >
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <div class="single-form form-default">
+                                                <label>User Name</label>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-input form">
+                                                        <input type="text" placeholder="First Name" name="name">
+                                                    </div>
+                                                    {{!-- <div class="col-md-6 form-input form">
+                                                        <input type="text" placeholder="Last Name">
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Email Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="Email Address" name="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Phone Number</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="Phone Number" name="mobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <label>Mailing Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="Mailing Address" name="address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>City</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="City" name="city">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Post Code</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="Post Code" name="pincode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <input type="text" name="userId" value="{{user._id}}" hidden>
+
+
+                                        <div class="col-md-6">
+                                            {{!-- <div class="single-form form-default">
+                                                <label>Region/State</label>
+                                                <div class="select-items">
+                                                    <select class="form-control">
+                                                        <option value="0">select</option>
+                                                        <option value="1">Kerala</option>
+                                                        <option value="2">Tamil Nadu</option>
+                                                        <option value="3">Kerala</option>
+                                                        <option value="4">Kerala</option>
+                                                        <option value="5">Kerala</option>
+                                                    </select>
+                                                </div>
+                                            </div> --}}
+                                            <button type="submit" class="btn btn-outline-success mt-3 ;" style="margin-left: 320px;" >Save</button>
+                                            
+                                             <h5 style="text-align: right;"><a class="btn btn-outline-success mt-3" href="/profile">Cancel</a></h5>
+                                        </div>
+
+
+                                        
+
+
+                                        {{!-- <div class="col-md-12">
+                                            <div class="steps-form-btn button">
+                                                <button class="btn" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">previous</button>
+                                                <a href="javascript:void(0)" class="btn btn-alt">Save & Continue</a>
+                                            </div>
+                                        </div> --}}
+
+
+                                    </div>
+
+
+                                </section>
+                            </li>
+
+
+                           
+
+
+                           
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            {{!-- /FORM --}}
+        </form>
+    </div>
+</section>

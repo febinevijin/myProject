@@ -1,0 +1,198 @@
+<section class="checkout-wrapper section">
+    <div class="container">
+        {{!-- FORM --}}
+        <form action="" id="">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+                        <ul id="accordionExample">
+
+                            {{!-- PERSONAL DETAILS --}}
+                            <li>
+                                <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6>
+
+                                <section class="checkout-steps-form-content collapse show" id="collapseThree"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="row d-flex justify-content-center  ">
+                                        <h5 style="text-align: right;"><a class="btn btn-outline-dark mt-2"
+                                                href="/edit-profile">edit</a></h5>
+
+                                        
+                                        {{!--
+                                        ===========================================START================================================
+                                        --}}
+                                        <style>
+                                            .card-body {
+                                               
+                                                flex: 1 1 auto;
+                                                min-height: 1px;
+                                                padding: 1rem;
+                                               border-style: solid;
+                                            }
+                                        </style>
+                                        <div class="col-md-8">
+                                            <div class="card mb-3">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0"> Name</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            {{user.name}}
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Email</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                           {{user.email}}
+                                                        </div>
+                                                    </div>
+                                                  
+                                                  
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Mobile</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                             {{user.phonenumber}}
+                                                        </div>
+                                                    </div>
+                                                   
+                                                
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <a class="btn btn-outline-warning " target="__blank"
+                                                                href="/change-password" >change password ?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            {{!--
+                                            ===========================================END========================================================
+                                            --}}
+
+
+
+
+
+
+                                            
+
+
+
+                                        </div>
+                                </section>
+                            </li>
+
+                            {{!-- ADD ADDRESS --}}
+                            {{#each address}}
+                            <li>
+                                <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour"> Address {{@index}}</h6>
+                                <section class="checkout-steps-form-content collapse" id="collapseFour"
+                                    aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <div class="d-inline">
+                                                {{!-- <p style="font-size: large; color: blue;">Address {{@index}}</p>
+                                                --}}
+                                                <h5 style="text-align: right;"><a class="btn btn-outline-dark mt-2"
+                                                        href="/edit-address/{{this._id}}">edit</a></h5>
+                                            </div>
+                                            <div class="single-form form-default">
+                                                <label>User Name</label>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-input form">
+                                                        <input type="text" value="{{this.name}}">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            {{!-- ===================== --}}
+                                       }
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Email Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" value="{{this.email}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Phone Number</label>
+                                                <div class="form-input form">
+                                                    <input type="text" value="{{this.mobile}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <label>Mailing Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" value="{{this.address}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>City</label>
+                                                <div class="form-input form">
+                                                    <input type="text" value="{{this.city}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Post Code</label>
+                                                <div class="form-input form">
+                                                    <input type="text" value="{{this.pincode}}">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    
+
+
+
+
+
+
+                                        <hr class="mt-5"
+                                            style="height:5px;border: width 1px;;color:gray;background-color:gray">
+                                    </div>
+
+
+                                </section>
+                            </li>
+                            {{/each}}
+                            <h5 style="text-align: right;"><a class="btn btn-outline-success mt-3"
+                                    href="/add-address">Add Address</a></h5>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            {{!-- /FORM --}}
+        </form>
+    </div>
+</section>

@@ -1,0 +1,94 @@
+<section class="checkout-wrapper section">
+    <div class="container">
+        {{!-- FORM --}}
+        <form action="/edit-address" method="post" id="">
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+                        <ul id="accordionExample">
+
+
+                            <li>
+                                {{!-- <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6> --}}
+                                   
+                                <section class="checkout-steps-form-content collapse show" id="collapseThree"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <label>User Name</label>
+                                                <div class="row">
+                                                    <div class="col-md-12 form-input form">
+                                                        <input type="text" name="name" value="{{address.name}}">
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Email Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" name="email" value="{{address.email}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Phone Number</label>
+                                                <div class="form-input form">
+                                                    <input type="text" name="mobile" value="{{address.mobile}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <label>Mailing Address</label>
+                                                <div class="form-input form">
+                                                    <input type="text" name="address" value="{{address.address}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>City</label>
+                                                <div class="form-input form">
+                                                    <input type="text" name="city" value="{{address.city}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Post Code</label>
+                                                <div class="form-input form">
+                                                    <input type="text" name="pincode" value="{{address.pincode}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <input type="text" name="addressId" value="{{address._id}}" hidden>
+                                      
+                                       <button type="submit" class="btn btn-outline-success mt-3 ;"  >Save</button>
+
+                                        {{!-- <h5 style="text-align: right;"><a class="btn btn-outline-success mt-3" href="/profile">Save</a></h5> --}}
+                                    </div>
+                                </section>
+                            </li>
+
+
+
+                           
+
+
+                           
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            {{!-- /FORM --}}
+        </form>
+    </div>
+</section>

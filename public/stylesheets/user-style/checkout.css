@@ -1,0 +1,8 @@
+input[type=radio]{
+    width: 90px;
+    height: 20px;
+}
+label.radio-inline{
+    display:flex;
+    align-items: center;
+}

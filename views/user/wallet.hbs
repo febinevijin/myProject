@@ -1,0 +1,140 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<section class="checkout-wrapper section">
+    <div class="container">
+
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="checkout-steps-form-style-1">
+                    <ul id="accordionExample">
+
+                        {{!-- PERSONAL DETAILS --}}
+                        <li>
+                            <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                aria-expanded="true" aria-controls="collapseThree">Your Wallet </h6>
+
+                            <section class="checkout-steps-form-content collapse show" id="collapseThree"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="row d-block  ">
+
+
+
+                                    <div class="card text-center">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">TOTAL AMOUNT IN YOUR WALLET</h5>
+                                            <p class="card-text">You can use your wallet amount to purchase items.</p>
+                                            <br>
+                                            {{#if wallet}}
+                                            <a href="#" class="btn btn-success">Rs. {{wallet}}</a>
+                                            {{else}}
+                                            <a href="#" class="btn btn-success">Rs. 0</a>
+                                            {{/if}}
+                                        </div>
+                                        <div class="card-footer text-muted">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card w-75">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Refferal link</h5>
+                                            <p class="card-text">invite friends with reffer, get extra rewrads</p>
+                                             <p id="p1" style="color:rgb(214, 88, 88)">{{referLink}}</p><br>
+                                            <button
+                                        class="btn btn-primary"  onclick="copyToClipboard('#p1')">Copy</button>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                            </section>
+                        </li>
+
+                        {{!-- ADD ADDRESS --}}
+
+                        <li>
+                            <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                aria-expanded="false" aria-controls="collapseFour">Coupon</h6>
+                            <section class="checkout-steps-form-content collapse" id="collapseFour"
+                                aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="d-inline">
+                                            {{!-- <p style="font-size: large; color: blue;">Address {{@index}}</p> --}}
+                                            <h5 style="text-align: right;"><a class="btn btn-outline-dark mt-2"
+                                                    href="/edit-address/{{this._id}}">edit</a></h5>
+                                        </div>
+                                        <div class="single-form form-default">
+                                            <label>User Name</label>
+                                            <div class="row">
+                                                <div class="col-md-12 form-input form">
+                                                    <input type="text" value="{{this.name}}">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form form-default">
+                                            <label>Email Address</label>
+                                            <div class="form-input form">
+                                                <input type="text" value="{{this.email}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                    <hr class="mt-5"
+                                        style="height:5px;border: width 1px;;color:gray;background-color:gray">
+                                </div>
+
+
+                            </section>
+                        </li>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+</script>

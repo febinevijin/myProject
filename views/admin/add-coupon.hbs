@@ -1,0 +1,316 @@
+<head>
+    <!-- Required meta tags -->
+
+
+    <link rel="icon" href="img/mini_logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- themefy CSS -->
+    <link rel="stylesheet" href="vendors/themefy_icon/themify-icons.css" />
+    <!-- select2 CSS -->
+    <link rel="stylesheet" href="vendors/niceselect/css/nice-select.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="vendors/owl_carousel/css/owl.carousel.css" />
+    <!-- gijgo css -->
+    <link rel="stylesheet" href="vendors/gijgo/gijgo.min.css" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
+    <link rel="stylesheet" href="vendors/tagsinput/tagsinput.css" />
+
+    <!-- date picker -->
+    <link rel="stylesheet" href="vendors/datepicker/date-picker.css" />
+
+    <link rel="stylesheet" href="vendors/vectormap-home/vectormap-2.0.2.css" />
+
+    <!-- scrollabe  -->
+    <link rel="stylesheet" href="vendors/scroll/scrollable.css" />
+    <!-- datatable CSS -->
+    <link rel="stylesheet" href="vendors/datatable/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/buttons.dataTables.min.css" />
+    <!-- text editor css -->
+    <link rel="stylesheet" href="vendors/text_editor/summernote-bs4.css" />
+    <!-- morris css -->
+    <link rel="stylesheet" href="vendors/morris/morris.css">
+    <!-- metarial icon css -->
+    <link rel="stylesheet" href="vendors/material_icon/material-icons.css" />
+
+    <!-- menu css  -->
+    <link rel="stylesheet" href="css/metisMenu.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/colors/default.css" id="colorSkinCSS">
+</head>
+
+<body class="crm_body_bg">
+
+
+
+    <!-- main content part here -->
+
+    <!-- sidebar  -->
+
+    <!--/ sidebar  -->
+
+
+    <section class="main_content dashboard_part large_header_bg">
+        <!-- menu  -->
+
+        <!--/ menu  -->
+        <div class="main_content_iner overly_inner ">
+            <div class="container-fluid p-0 ">
+                <!-- page title  -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page_title_box d-flex align-items-center justify-content-between mt-5">
+                            <div class="page_title_left">
+                                <h3 class="f_s_30 f_w_700 dark_text">Add coupon</h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card QA_section border-0">
+                            <div class="card-body QA_table ">
+
+                                {{!-- <div class="table-responsive shopping-cart ">
+                                    <table class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">Coupon</th>
+                                                <th class="border-top-0">Discount</th>
+                                                <th class="border-top-0">expire</th>
+                                                <th class="border-top-0">status(used/not)</th>
+                                                <th class="border-top-0">options</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>{{this._id}}
+                                                </td>
+                                                <td>{{this.userId}}</td>
+                                                <td>{{this.deliveryDetails.name}} </td>
+                                                <td>{{this.date}}</td>
+
+
+
+                                                <td>
+                                                    <a href="" class="btn btn-danger"> delete </a>
+                                                </td>
+
+
+                                            </tr>
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div> --}}
+
+                                <section class="checkout-wrapper section">
+                                    <div class="container">
+                                        {{!-- FORM --}}
+                                        <form action="/admin/add-coupon" method="post" id="">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+                                                    <div class="checkout-steps-form-style-1">
+                                                        <ul id="accordionExample">
+
+
+                                                            <li>
+                                                                {{!-- <h6 class="title" data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseThree" aria-expanded="true"
+                                                                    aria-controls="collapseThree">Your Personal Details
+                                                                </h6> --}}
+
+                                                                <section
+                                                                    class="checkout-steps-form-content collapse show"
+                                                                    id="collapseThree" aria-labelledby="headingThree"
+                                                                    data-bs-parent="#accordionExample">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="single-form form-default">
+                                                                                <label>Enter the coupon code</label>
+                                                                                {{!-- {{#if passMsg}}
+                                                                                <p class="error" style="color: red;">
+                                                                                    {{passMsg}}</p>
+                                                                                {{/if}} --}}
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-md-12 form-input form">
+                                                                                        <input type="text"
+                                                                                            name="coupon">
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="single-form form-default">
+                                                                                <label>enter the discount amount</label>
+                                                                                {{!-- {{#if passMsg}}
+                                                                                <p class="error" style="color: red;">
+                                                                                    {{passMsg}}</p>
+                                                                                {{/if}} --}}
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-md-12 form-input form">
+                                                                                        <input type="text"
+                                                                                            name="discount">
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="single-form form-default">
+                                                                                <label>expiring date</label>
+                                                                                {{!-- {{#if passMsg}}
+                                                                                <p class="error" style="color: red;">
+                                                                                    {{passMsg}}</p>
+                                                                                {{/if}} --}}
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-md-12 form-input form">
+                                                                                        {{!-- <input type="text"
+                                                                                            name="date"> --}}
+
+                                                                                        <input type="datetime-local"
+                                                                                            id="Test_DatetimeLocal"
+                                                                                            name="date">
+
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+
+
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-success mt-3 ;">Submit</button>
+
+                                                                        {{!-- <h5 style="text-align: right;"><a
+                                                                                class="btn btn-outline-success mt-3"
+                                                                                href="/profile">Save</a></h5> --}}
+                                                                    </div>
+                                                                </section>
+                                                            </li>
+
+
+
+
+
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            {{!-- /FORM --}}
+                                        </form>
+                                    </div>
+                                </section>
+
+
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end card-body-->
+                    </div>
+
+                    <!--end col-->
+                </div>
+            </div>
+        </div>
+
+        <!-- footer part -->
+        <div class="footer_part">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer_iner text-center">
+                            <p>2020 © Influence - Designed by <a href="#"> <i class="ti-heart"></i> </a><a href="#">
+                                    Dashboard</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main content part end -->
+
+    <!-- ### CHAT_MESSAGE_BOX   ### -->
+
+
+    <!--/### CHAT_MESSAGE_BOX  ### -->
+
+
+
+    <!-- footer  -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstarp js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- sidebar menu  -->
+    <script src="js/metisMenu.js"></script>
+    <!-- waypoints js -->
+    <script src="vendors/count_up/jquery.waypoints.min.js"></script>
+    <!-- waypoints js -->
+    <script src="vendors/chartlist/Chart.min.js"></script>
+    <!-- counterup js -->
+    <script src="vendors/count_up/jquery.counterup.min.js"></script>
+
+    <!-- nice select -->
+    <script src="vendors/niceselect/js/jquery.nice-select.min.js"></script>
+    <!-- owl carousel -->
+    <script src="vendors/owl_carousel/js/owl.carousel.min.js"></script>
+
+    <!-- responsive table -->
+    <script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
+    <script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatable/js/buttons.flash.min.js"></script>
+    <script src="vendors/datatable/js/jszip.min.js"></script>
+    <script src="vendors/datatable/js/pdfmake.min.js"></script>
+    <script src="vendors/datatable/js/vfs_fonts.js"></script>
+    <script src="vendors/datatable/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatable/js/buttons.print.min.js"></script>
+
+    <!-- datepicker  -->
+    <script src="vendors/datepicker/datepicker.js"></script>
+    <script src="vendors/datepicker/datepicker.en.js"></script>
+    <script src="vendors/datepicker/datepicker.custom.js"></script>
+
+    <script src="js/chart.min.js"></script>
+    <script src="vendors/chartjs/roundedBar.min.js"></script>
+
+    <!-- progressbar js -->
+    <script src="vendors/progressbar/jquery.barfiller.js"></script>
+    <!-- tag input -->
+    <script src="vendors/tagsinput/tagsinput.js"></script>
+    <!-- text editor js -->
+    <script src="vendors/text_editor/summernote-bs4.js"></script>
+    <script src="vendors/am_chart/amcharts.js"></script>
+
+    <!-- scrollabe  -->
+    <script src="vendors/scroll/perfect-scrollbar.min.js"></script>
+    <script src="vendors/scroll/scrollable-custom.js"></script>
+
+
+    <script src="vendors/chart_am/core.js"></script>
+    <script src="vendors/chart_am/charts.js"></script>
+    <script src="vendors/chart_am/animated.js"></script>
+    <script src="vendors/chart_am/kelly.js"></script>
+    <script src="vendors/chart_am/chart-custom.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>

@@ -1,0 +1,68 @@
+<section class="mt-5 mb-5">
+    <div class="container">
+       
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Address</th>
+      <th scope="col">Pin code</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Payment</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each orders}}
+    <tr>
+      <td style="width: 150px;">{{this.date}}</td>
+      <td>{{this.deliveryDetails.address}}</td>
+       <td>{{this.deliveryDetails.pincode}}</td>
+        <td>{{this.deliveryDetails.mobile}}</td>
+      <td>{{this.totalAmount}}</td>
+      <td>{{this.paymentMethod}}</td>
+      {{#if this.status}}
+      <td>{{this.status}}</td>
+      {{/if}}
+
+       {{#if this.cancelStatus}}
+      <td>Cancelled</td>
+      {{/if}}
+
+       {{#if this.shippingStatus}}
+      <td>Shipped</td>
+      {{/if}}
+
+       {{#if this.deliveryStatus}}
+      <td>Delivered</td>
+      {{/if}}
+    <td>
+        <a href="/view-order-product/{{this._id}}" class="btn btn-primary">View Products</a> 
+       
+    </td>
+       {{#if this.status}}
+     <td>
+       <a  href="/cancel-ord?status=cancel&id={{this._id}}" class="btn btn-warning"> cancel </a>
+        
+         {{!-- <button type="button" class="btn btn-danger" onclick="removeCart  ('{{this._id}}','{{this.products._id}}') "><i class="lni lni-close"></i></button> --}}
+    </td>
+        {{/if}}
+
+          {{#if this.shippingStatus}}
+     <td>
+       <a  href="/cancel-ord?status=cancel&id={{this._id}}" class="btn btn-warning"> cancel </a>
+        
+         {{!-- <button type="button" class="btn btn-danger" onclick="removeCart  ('{{this._id}}','{{this.products._id}}') "><i class="lni lni-close"></i></button> --}}
+    </td>
+        {{/if}}
+
+    </tr>
+    
+    {{/each}}
+  </tbody>
+</table>
+
+       
+    </div>
+</section>
