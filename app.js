@@ -9,7 +9,7 @@ let adminRouter = require('./routes/admin');
 
 let hbs=require('express-handlebars')
 let app = express();
-let fileUpload = require('express-fileUpload')
+// let fileUpload = require('express-fileUpload')
 let db=require('./config/connection')
 let session = require("express-session")
 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(fileUpload())
+// app.use(fileUpload())
 app.use(session({secret:"key",cookie:{maxAge:600000}}))
 app.use((req, res, next) => {
   res.set('Cache-Control','no-cache,private,no-store,must-revalidate,max-stale=0,post-check=0,pre-check=0')
